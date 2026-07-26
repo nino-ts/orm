@@ -42,9 +42,25 @@
         }
     },
     "files": [
+        "LICENSE",
+        "README.md",
         "dist",
+        "dist/index.d.ts",
+        "dist/src/casts/cast-registry.d.ts",
+        "dist/src/collection.d.ts",
+        "dist/src/model.d.ts",
+        "dist/src/query-builder.d.ts",
+        "dist/src/relations/relation.d.ts",
+        "dist/src/types.d.ts",
+        "index.ts",
+        "jsr.json",
         "src",
-        "index.ts"
+        "src/casts/cast-registry.ts",
+        "src/collection.ts",
+        "src/model.ts",
+        "src/query-builder.ts",
+        "src/relations/relation.ts",
+        "src/types.ts"
     ],
     "keywords": [
         "bun",
@@ -74,5 +90,13 @@
     "publishConfig": {
         "access": "public",
         "registry": "https://registry.npmjs.org"
-    }
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nino-ts/orm.git"
+    },
+    "bugs": {
+        "url": "https://github.com/nino-ts/orm/issues"
+    },
+    "homepage": "https://github.com/nino-ts/orm#readme"
 }

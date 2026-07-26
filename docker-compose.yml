@@ -1,0 +1,35 @@
+services:
+  postgres:
+    image: postgres:alpine
+    container_name: ninots_postgres_test
+    environment:
+      POSTGRES_USER: ninots
+      POSTGRES_PASSWORD: ninots
+      POSTGRES_DB: ninots_test
+    ports:
+      - "5432:5432"
+    tmpfs:
+      - /var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ninots -d ninots_test"]
+      interval: 2s
+      timeout: 5s
+      retries: 10
+
+  mariadb:
+    image: mariadb:latest
+    container_name: ninots_mariadb_test
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: ninots
+      MYSQL_PASSWORD: ninots
+      MYSQL_DATABASE: ninots_test
+    ports:
+      - "3306:3306"
+    tmpfs:
+      - /var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 2s
+      timeout: 5s
+      retries: 10

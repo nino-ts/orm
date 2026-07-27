@@ -1,102 +1,23 @@
 {
-    "author": "Ninots Framework",
-    "description": "Eloquent-like ORM for Bun built with native features - Standalone package",
-    "devDependencies": {
-        "@types/bun": "^1.3.13"
-    },
-    "exports": {
-        ".": {
-            "types": "./dist/index.d.ts",
-            "import": "./index.ts",
-            "default": "./index.ts"
-        },
-        "./casts": {
-            "types": "./dist/src/casts/cast-registry.d.ts",
-            "import": "./src/casts/cast-registry.ts",
-            "default": "./src/casts/cast-registry.ts"
-        },
-        "./collection": {
-            "types": "./dist/src/collection.d.ts",
-            "import": "./src/collection.ts",
-            "default": "./src/collection.ts"
-        },
-        "./model": {
-            "types": "./dist/src/model.d.ts",
-            "import": "./src/model.ts",
-            "default": "./src/model.ts"
-        },
-        "./query-builder": {
-            "types": "./dist/src/query-builder.d.ts",
-            "import": "./src/query-builder.ts",
-            "default": "./src/query-builder.ts"
-        },
-        "./relations": {
-            "types": "./dist/src/relations/relation.d.ts",
-            "import": "./src/relations/relation.ts",
-            "default": "./src/relations/relation.ts"
-        },
-        "./types": {
-            "types": "./dist/src/types.d.ts",
-            "import": "./src/types.ts",
-            "default": "./src/types.ts"
-        }
-    },
-    "files": [
-        "LICENSE",
-        "README.md",
-        "dist",
-        "dist/index.d.ts",
-        "dist/src/casts/cast-registry.d.ts",
-        "dist/src/collection.d.ts",
-        "dist/src/model.d.ts",
-        "dist/src/query-builder.d.ts",
-        "dist/src/relations/relation.d.ts",
-        "dist/src/types.d.ts",
-        "index.ts",
-        "jsr.json",
-        "src",
-        "src/casts/cast-registry.ts",
-        "src/collection.ts",
-        "src/model.ts",
-        "src/query-builder.ts",
-        "src/relations/relation.ts",
-        "src/types.ts"
-    ],
-    "keywords": [
-        "bun",
-        "orm",
-        "eloquent",
-        "database",
-        "sql",
-        "typescript",
-        "standalone"
-    ],
-    "license": "MIT",
     "name": "@ninots/orm",
-    "peerDependencies": {
-        "typescript": "^6.0.3"
-    },
-    "scripts": {
-        "build": "bun build index.ts --outdir dist --target bun",
-        "format": "bun run biome format --write",
-        "lint": "bun run biome lint",
-        "test": "bun test",
-        "test:db": "bun run scripts/test-with-db.ts",
-        "type-check": "tsc --noEmit"
-    },
+    "main": "index.ts",
+    "module": "index.ts",
     "type": "module",
     "version": "0.0.1",
+    "description": "Eloquent-like ORM for Bun built with native features - Standalone package",
+    "author": "Ninots Framework",
+    "keywords": ["bun","orm","eloquent","database","sql","typescript","standalone"],
+    "license": "MIT",
+    "scripts": { "test": "bun test" },
+    "publishConfig": { "access": "public", "registry": "https://registry.npmjs.org" },
+    "repository": { "type": "git", "url": "https://github.com/nino-ts/orm.git" },
+    "bugs": { "url": "https://github.com/nino-ts/orm/issues" },
+    "homepage": "https://github.com/nino-ts/orm#readme",
+    "devDependencies": { "@types/bun": "latest" },
+    "peerDependencies": { "typescript": "^6.0.3" },
+    "exports": { ".": { "types": "./dist/index.d.ts", "import": "./index.ts", "default": "./index.ts" } },
     "types": "./dist/index.d.ts",
-    "publishConfig": {
-        "access": "public",
-        "registry": "https://registry.npmjs.org"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/nino-ts/orm.git"
-    },
-    "bugs": {
-        "url": "https://github.com/nino-ts/orm/issues"
-    },
-    "homepage": "https://github.com/nino-ts/orm#readme"
+    "files": ["LICENSE", "README.md", "dist", "dist/index.d.ts", "index.ts", "jsr.json", "src"],
+    "engines": { "bun": ">=1.0.0" },
+    "packageManager": "~bun@1.0.0"
 }

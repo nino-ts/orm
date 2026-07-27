@@ -6,18 +6,57 @@
     "version": "0.0.1",
     "description": "Eloquent-like ORM for Bun built with native features - Standalone package",
     "author": "Ninots Framework",
-    "keywords": ["bun","orm","eloquent","database","sql","typescript","standalone"],
+    "keywords": [
+        "bun",
+        "orm",
+        "eloquent",
+        "database",
+        "sql",
+        "typescript",
+        "standalone"
+    ],
     "license": "MIT",
-    "scripts": { "test": "bun test" },
-    "publishConfig": { "access": "public", "registry": "https://registry.npmjs.org" },
-    "repository": { "type": "git", "url": "https://github.com/nino-ts/orm.git" },
-    "bugs": { "url": "https://github.com/nino-ts/orm/issues" },
+    "scripts": {
+        "test": "bun test"
+    },
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nino-ts/orm.git"
+    },
+    "bugs": {
+        "url": "https://github.com/nino-ts/orm/issues"
+    },
     "homepage": "https://github.com/nino-ts/orm#readme",
-    "devDependencies": { "@types/bun": "latest" },
-    "peerDependencies": { "typescript": "^6.0.3" },
-    "exports": { ".": { "types": "./dist/index.d.ts", "import": "./index.ts", "default": "./index.ts" } },
+    "devDependencies": {
+        "@types/bun": "latest"
+    },
+    "peerDependencies": {
+        "typescript": "^6.0.3",
+        "bun": ">=1.0.0"
+    },
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./index.ts",
+            "default": "./index.ts"
+        }
+    },
     "types": "./dist/index.d.ts",
-    "files": ["LICENSE", "README.md", "dist", "dist/index.d.ts", "index.ts", "jsr.json", "src"],
-    "engines": { "bun": ">=1.0.0" },
+    "files": [
+        "LICENSE",
+        "README.md",
+        "dist",
+        "dist/index.d.ts",
+        "index.ts",
+        "jsr.json",
+        "src"
+    ],
+    "engines": {
+        "bun": ">=1.0.0"
+    },
     "packageManager": "~bun@1.0.0"
 }

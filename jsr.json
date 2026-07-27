@@ -10,7 +10,8 @@
             "README.md",
             "package.json",
             "jsr.json",
-            "LICENSE"
+            "LICENSE",
+            "jsr-shims/**/*.ts"
         ],
         "exclude": [
             "tests/**",
@@ -18,5 +19,9 @@
             "node_modules/**"
         ]
     },
-    "license": "MIT"
+    "license": "MIT",
+    "imports": {
+        "bun": "./jsr-shims/bun.ts",
+        "bun:sqlite": "./jsr-shims/bun-sqlite.ts"
+    }
 }

@@ -3,7 +3,7 @@
     "main": "index.ts",
     "module": "index.ts",
     "type": "module",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Eloquent-like ORM for Bun built with native features - Standalone package",
     "author": "Ninots Framework",
     "keywords": [
@@ -40,12 +40,12 @@
     },
     "exports": {
         ".": {
-            "types": "./dist/index.d.ts",
+            "types": "./index.ts",
             "import": "./index.ts",
             "default": "./index.ts"
         }
     },
-    "types": "./dist/index.d.ts",
+    "types": "./index.ts",
     "files": [
         "LICENSE",
         "README.md",

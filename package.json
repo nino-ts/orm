@@ -1,4 +1,4 @@
-{
+﻿{
   "name": "@ninots/orm",
   "main": "index.ts",
   "module": "index.ts",
@@ -53,7 +53,6 @@
     "dist",
     "dist/index.d.ts",
     "index.ts",
-    "jsr.json",
     "src"
   ],
   "engines": {
@@ -61,3 +60,4 @@
   },
   "packageManager": "~bun@1.0.0"
 }
+

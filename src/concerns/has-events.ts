@@ -81,8 +81,7 @@ export function HasEvents<TBase extends Constructor>(Base: TBase): TBase & Event
          * ```
          */
         static addEventListener(event: EventName, callback: EventCallback): void {
-            const className =
-                this.name;
+            const className = this.name;
             if (!eventListeners.has(className)) {
                 eventListeners.set(className, new Map());
             }
@@ -105,9 +104,7 @@ export function HasEvents<TBase extends Constructor>(Base: TBase): TBase & Event
          * ```
          */
         static clearEventListeners(): void {
-            eventListeners.delete(
-                this.name,
-            );
+            eventListeners.delete(this.name);
         }
 
         /**

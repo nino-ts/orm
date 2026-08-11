@@ -140,10 +140,7 @@ export class Migrator {
             const migrationName = stripExtension(file);
             const instance = await this.loadMigration(file);
             await instance.up(connection);
-            await connection.run(`INSERT INTO ${this.table} (migration, batch) VALUES (?, ?)`, [
-                migrationName,
-                batch,
-            ]);
+            await connection.run(`INSERT INTO ${this.table} (migration, batch) VALUES (?, ?)`, [migrationName, batch]);
             executed.push(migrationName);
             onStep?.(migrationName);
         }

@@ -69,8 +69,7 @@ export function SoftDeletes<TBase extends Constructor>(Base: TBase): SoftDeletes
          * ```
          */
         static withTrashed(): QueryBuilder<Model<Record<string, unknown>>> {
-            const Ctor =
-                this as unknown as new () => SoftDeletingModel;
+            const Ctor = this as unknown as new () => SoftDeletingModel;
             return new Ctor().newQueryWithoutScopes();
         }
 

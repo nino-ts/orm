@@ -370,14 +370,9 @@ export class Model<TAttributes extends object = Record<string, unknown>> impleme
         this: new () => T,
         count: N,
     ): import("./factory/factory").Factory<T, Record<string, unknown>, N>;
-    static factory<T extends Model>(
-        this: new () => T,
-        count?: number,
-    ): import("./factory/factory").Factory<T> {
+    static factory<T extends Model>(this: new () => T, count?: number): import("./factory/factory").Factory<T> {
         void count;
-        throw new Error(
-            `No factory configured for [${this.name}]. Call configureModelFactory() first.`,
-        );
+        throw new Error(`No factory configured for [${this.name}]. Call configureModelFactory() first.`);
     }
 
     /**

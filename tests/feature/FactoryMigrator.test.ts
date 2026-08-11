@@ -46,9 +46,9 @@ describe("Factory", () => {
         db.setDefaultConnection("default");
         Model.setConnectionResolver(db);
 
-        await db.connection().run(
-            "CREATE TABLE users (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, email TEXT, password TEXT)",
-        );
+        await db
+            .connection()
+            .run("CREATE TABLE users (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, email TEXT, password TEXT)");
     });
 
     afterEach(async () => {
@@ -71,9 +71,7 @@ describe("Factory", () => {
     });
 
     test("state() overrides generated attributes", async () => {
-        const user = await UserFactory.new()
-            .state({ name: "Nova" })
-            .create({ email: "nova@ninots.test" });
+        const user = await UserFactory.new().state({ name: "Nova" }).create({ email: "nova@ninots.test" });
 
         expect(user.name).toBe("Nova");
         expect(user.email).toBe("nova@ninots.test");

@@ -4,9 +4,7 @@ import type { ModelConstructor } from "../types";
 /**
  * State callback applied during factory attribute resolution.
  */
-export type FactoryStateCallback<TAttributes extends object> = (
-    attributes: TAttributes,
-) => Partial<TAttributes>;
+export type FactoryStateCallback<TAttributes extends object> = (attributes: TAttributes) => Partial<TAttributes>;
 
 /**
  * Queued child factory for `has()` relationships.
@@ -81,9 +79,7 @@ export abstract class Factory<
     /**
      * Apply state overrides to the generated attributes.
      */
-    state(
-        state: Partial<TAttributes> | FactoryStateCallback<TAttributes>,
-    ): Factory<TModel, TAttributes, TCount> {
+    state(state: Partial<TAttributes> | FactoryStateCallback<TAttributes>): Factory<TModel, TAttributes, TCount> {
         const cloned = this.clone();
         if (typeof state === "function") {
             cloned.states.push(state);
@@ -115,9 +111,9 @@ export abstract class Factory<
         return cloned;
     }
 
-  /**
-   * Build model instances without persisting.
-   */
+    /**
+     * Build model instances without persisting.
+     */
     async make(overrides: Partial<TAttributes> = {}): Promise<FactoryResult<TModel, TCount>> {
         const amount = this.countValue ?? 1;
         const models: TModel[] = [];

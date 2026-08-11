@@ -58,10 +58,10 @@ export function Column(name: string) {
         // The 'this' context in addInitializer is the instance, so we access its constructor
         ctx.addInitializer(function (this: unknown) {
             const instance = this as ModelInstanceWithMapping;
-            const constructor = instance.constructor as ModelInstanceWithMapping["constructor"];
+            const modelCtor = instance.constructor as ModelInstanceWithMapping["constructor"];
 
-            if (!constructor.__columnMapping) {
-                Object.defineProperty(constructor, "__columnMapping", {
+            if (!modelCtor.__columnMapping) {
+                Object.defineProperty(modelCtor, "__columnMapping", {
                     configurable: true,
                     enumerable: false,
                     value: {},
@@ -69,8 +69,8 @@ export function Column(name: string) {
                 });
             }
 
-            if (constructor.__columnMapping) {
-                constructor.__columnMapping[propName] = name;
+            if (modelCtor.__columnMapping) {
+                modelCtor.__columnMapping[propName] = name;
             }
         });
     };
